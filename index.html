@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md Mahfuzur Rahman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans">
+
+  <!-- 🌐 Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold font-[Pacifico]">Mahfuz</h1>
+      <nav class="hidden md:flex space-x-6 font-medium">
+        <a href="#about" class="hover:text-indigo-500">About</a>
+        <a href="#skills" class="hover:text-indigo-500">Skills</a>
+        <a href="#projects" class="hover:text-indigo-500">Projects</a>
+        <a href="#timeline" class="hover:text-indigo-500">Journey</a>
+        <a href="#contact" class="hover:text-indigo-500">Contact</a>
+        <button onclick="toggleDark()" class="ml-4 text-yellow-400">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🏠 Hero Section -->
+  <section
+    class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white px-6 pt-20">
+    <div data-aos="fade-up">
+      <h1 class="text-5xl font-bold mb-4">Md Mahfuzur Rahman</h1>
+      <p class="text-xl text-gray-300">Web Developer & Cybersecurity Enthusiast</p>
+      <p class="mt-4 max-w-xl mx-auto text-gray-400">
+        CSE 3rd Year @ CUET. Passionate about secure full-stack web development and ethical hacking.
+      </p>
+      <div class="mt-6 space-x-4">
+        <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full">See Projects</a>
+        <a href="#contact"
+          class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black">Contact</a>
+        <a href="/resume.pdf" download class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 👨‍💻 About Section -->
+  <section id="about" class="py-20 bg-white dark:bg-gray-800 px-6">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        I'm Mahfuz, a curious coder from CUET diving deep into web technologies and cybersecurity.
+        I enjoy solving problems, learning new tools, and building things that make a difference.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🚀 Skills Section -->
+  <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-900 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-800 dark:text-white">
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
+          <img src="https://cdn.simpleicons.org/html5" class="w-6 h-6" /> <span>HTML & CSS</span>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
+          <img src="https://cdn.simpleicons.org/javascript" class="w-6 h-6" /> <span>JavaScript</span>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
+          <img src="https://cdn.simpleicons.org/tailwindcss" class="w-6 h-6" /> <span>Tailwind CSS</span>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
+          <img src="https://cdn.simpleicons.org/firebase" class="w-6 h-6" /> <span>Firebase</span>
+        </div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">React (Learning)</div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Ethical Hacking Basics</div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Linux & CLI</div>
+        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Bug Bounty (Beginner)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💼 Projects Section -->
+  <!-- <section id="projects" class="py-20 bg-white dark:bg-gray-800 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">My Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Secure Login System</h3>
+          <p>Firebase-based secure login system with email/password auth, 2FA support and protected routes.</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+          <p>This modern portfolio with dark mode, scroll reveal, and responsive design.</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Doctor Appointment App</h3>
+          <p>A Firebase-based responsive web app for booking appointments with authentication and dashboard.</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Bug Bounty Report Clone</h3>
+          <p>UI clone project mimicking real-world bug bounty report with markdown support and tailwind layout.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+  <!-- 💼 Projects Section -->
+  <!-- <section id="projects" class="py-20 bg-white dark:bg-gray-800 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">My Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://github.com/Mahfuz21-04050/Laundry" target="_blank" class="hover:underline">
+              Smart Laundry
+            </a>
+          </h3>
+          <p>Web development project for laundry service management.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://github.com/blackcodd/APMMS" target="_blank" class="hover:underline">
+              APMMS
+            </a>
+          </h3>
+          <p>Advanced Personal Money Management System.</p>
+        </div>
+
+
+
+
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href=" https://mahfuz21-04050.github.io/Tailwind-css/" target="_blank" class="hover:underline">
+              Tailwind-css
+            </a>
+          </h3>
+          <p>Tailwind CSS practice and components.</p>
+        </div>
+
+
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://mahfuz21-04050.github.io/Educational-form/" target="_blank" class="hover:underline">
+              Educational-form
+            </a>
+          </h3>
+          <p>Form project for educational purposes.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://mahfuz21-04050.github.io/Newspaper/" target="_blank" class="hover:underline">
+              Newspaper
+            </a>
+          </h3>
+          <p>Online newspaper layout project.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="gilded-choux-fb3f6c.netlify.app" target="_blank" class="hover:underline">
+              Temperature-Converter
+            </a>
+          </h3>
+          <p>Simple temperature conversion app.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href=" https://mahfuz21-04050.github.io/doctor-site/" target="_blank" class="hover:underline">
+              Doctor Bio
+            </a>
+          </h3>
+          <p>Personal website for a doctor with bio, services, and contact info.</p>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </section> -->
+
+  <!-- 💼 Projects Section -->
+  <section id="projects" class="py-20 bg-white dark:bg-gray-800 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">My Projects</h2>
+
+      <!-- Category Tabs -->
+      <div class="flex justify-center mb-8 space-x-4">
+        <button onclick="showProjects('web')"
+          class="px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700">Web Development</button>
+        <button onclick="showProjects('cyber')"
+          class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Cybersecurity</button>
+      </div>
+
+      <!-- Web Dev Projects -->
+      <div id="web-projects" class="grid md:grid-cols-2 gap-8">
+        <!-- Add your web projects here -->
+        <!-- Example -->
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://github.com/Mahfuz21-04050/Laundry" target="_blank" class="hover:underline">Smart
+              Laundry</a>
+          </h3>
+          <p>Web development project for laundry service management.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://github.com/blackcodd/APMMS" target="_blank" class="hover:underline">APMMS</a>
+          </h3>
+          <p>Advanced Personal Money Management System.</p>
+        </div>
+
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href=" https://mahfuz21-04050.github.io/Tailwind-css/" target="_blank" class="hover:underline">
+              Tailwind-css
+            </a>
+          </h3>
+          <p>Tailwind CSS practice and components.</p>
+        </div>
+
+
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://mahfuz21-04050.github.io/Educational-form/" target="_blank" class="hover:underline">
+              Educational-form
+            </a>
+          </h3>
+          <p>Form project for educational purposes.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="https://mahfuz21-04050.github.io/Newspaper/" target="_blank" class="hover:underline">
+              Newspaper
+            </a>
+          </h3>
+          <p>Online newspaper layout project.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href="gilded-choux-fb3f6c.netlify.app" target="_blank" class="hover:underline">
+              Temperature-Converter
+            </a>
+          </h3>
+          <p>Simple temperature conversion app.</p>
+        </div>
+
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">
+            <a href=" https://mahfuz21-04050.github.io/doctor-site/" target="_blank" class="hover:underline">
+              Doctor Bio
+            </a>
+          </h3>
+          <p>Personal website for a doctor with bio, services, and contact info.</p>
+
+        </div>
+
+        <!-- More from your list -->
+      </div>
+
+      <!-- Cybersecurity Projects -->
+      <div id="cyber-projects" class="grid md:grid-cols-2 gap-8 hidden">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Secure Login System</h3>
+          <p>Firebase-based login system with 2FA and protected routes.</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Bug Bounty Report Clone</h3>
+          <p>Styled UI resembling bug bounty writeups with Tailwind.</p>
+        </div>
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+          <h3 class="text-xl font-semibold mb-2">Port Scanner CLI Tool</h3>
+          <p>A custom port scanner using Python socket module (CLI-based).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 🧭 Timeline Section -->
+  <section id="timeline" class="bg-gray-100 dark:bg-gray-800 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">My Journey</h2>
+      <div class="space-y-8 border-l-4 border-indigo-500 pl-6">
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">📚 Primary Education – Borni Govt. Primary School (2011)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Successfully completed PSC with a GPA of 4.42, laying the
+            foundation of my academic career.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">🏫 Junior School – Bashbaria Janjania Secondary School (2014)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Achieved GPA 4.17 in JSC, strengthening my interest in learning
+            and discipline.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">🎓 Secondary School – Malikhali Secondary School (2018)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Secured a Golden A+ in SSC, showcasing dedication and strong
+            academic performance.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">🏛 Higher Secondary – BUET College (2021)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Once again achieved Golden A+ in HSC, driven by passion for
+            science and technology.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">🎯 University Admission – CUET CSE (2021)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Ranked 617th in the CUET-KUET-RUET combined admission test and
+            enrolled in Computer Science & Engineering at CUET.</p>
+        </div>
+        <div data-aos="fade-up">
+          <h3 class="text-xl font-semibold">🚀 Present – CUET CSE Student (2021–2025)</h3>
+          <p class="text-gray-600 dark:text-gray-400">Currently pursuing B.Sc. in CSE at CUET with a strong focus on web
+            development and cybersecurity, continually learning and building impactful projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 📩 Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-white px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold mb-6 tracking-tight">Let's Connect</h2>
+      <p class="mb-8 text-gray-300 text-lg">I'm always open to discussing new projects, creative ideas, or opportunities
+        to collaborate. Reach out through any of the platforms below.</p>
+
+      <div class="flex justify-center flex-wrap gap-4 mb-10">
+        <a href="mailto:maahfuz2021@gmail.com"
+          class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full transition-all duration-300">
+          📧 Email
+        </a>
+        <a href="https://www.facebook.com" target="_blank"
+          class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"
+            class="w-5 h-5" /> Facebook
+        </a>
+        <a href="https://www.linkedin.com/in/md-mahfuzur-rahman-cse/" target="_blank"
+          class="flex items-center gap-2 bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-full transition-all duration-300">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/" target="_blank"
+          class="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-full transition-all duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"
+            class="w-5 h-5 bg-white rounded-full" /> GitHub
+        </a>
+        <a href="https://www.instagram.com/maahfuz2021/" target="_blank"
+          class="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 px-6 py-3 rounded-full transition-all duration-300">
+          📸 Instagram
+        </a>
+        <a href="https://wa.me/8801576525872" target="_blank"
+          class="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full transition-all duration-300">
+          💬 WhatsApp
+        </a>
+      </div>
+
+      <div class="text-sm text-gray-400 space-y-1">
+        <p>📞 <strong>Phone:</strong> <a href="tel:01576525872" class="hover:underline">01576-525872</a>, <a
+            href="tel:01908382082" class="hover:underline">01908-382082</a></p>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:maahfuz2021@gmail.com"
+            class="hover:underline">maahfuz2021@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 🔝 Back to Top -->
+  <a href="#"
+    class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700">↑</a>
+
+  <!-- 📜 Footer -->
+  <footer class="bg-black text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Md Mahfuzur Rahman | Built with 💻 & 🛡️ | CUET</p>
+  </footer>
+
+  <!-- 🌙 Dark Mode Toggle Script -->
+  <script>
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+
+
+    function showProjects(type) {
+      const web = document.getElementById('web-projects');
+      const cyber = document.getElementById('cyber-projects');
+      if (type === 'web') {
+        web.classList.remove('hidden');
+        cyber.classList.add('hidden');
+      } else {
+        web.classList.add('hidden');
+        cyber.classList.remove('hidden');
+      }
+    }
+
+
+  </script>
+
+
+  <!-- AOS Animation Init -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+
+</html>
