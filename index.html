@@ -43,30 +43,21 @@
       </nav>
 
       <!-- Mobile Menu Button -->
-      <!-- <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button> -->
-
-      <!-- Mobile Nav Dropdown with animation (overlayed) -->
-      <div id="mobileMenu"
-        class="absolute top-full left-0 w-full transition-all duration-300 ease-in-out transform scale-y-0 origin-top md:hidden flex flex-col items-start px-6 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
-        <a href="#about" class="block py-2 hover:text-indigo-500">About</a>
-        <a href="#skills" class="block py-2 hover:text-indigo-500">Skills</a>
-        <a href="#projects" class="block py-2 hover:text-indigo-500">Projects</a>
-        <a href="#timeline" class="block py-2 hover:text-indigo-500">Journey</a>
-        <a href="#contact" class="block py-2 hover:text-indigo-500">Contact</a>
-        <button onclick="toggleDark()" class="text-yellow-400 py-2">🌙 Dark Mode</button>
-      </div>
-
+      <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
     </div>
 
     <!-- Mobile Nav Dropdown -->
-    <div id="mobileMenu" class="md:hidden hidden flex-col items-start px-6 pb-4 space-y-2 bg-white dark:bg-gray-900">
-      <a href="#about" class="block hover:text-indigo-500">About</a>
-      <a href="#skills" class="block hover:text-indigo-500">Skills</a>
-      <a href="#projects" class="block hover:text-indigo-500">Projects</a>
-      <a href="#timeline" class="block hover:text-indigo-500">Journey</a>
-      <a href="#contact" class="block hover:text-indigo-500">Contact</a>
-      <button onclick="toggleDark()" class="text-yellow-400">🌙 Dark Mode</button>
+    <div id="mobileMenu"
+      class="absolute top-full left-0 w-full transition-all duration-300 ease-in-out transform scale-y-0 origin-top md:hidden flex flex-col items-start px-6 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
+      <a href="#about" class="block py-2 hover:text-indigo-500">About</a>
+      <a href="#skills" class="block py-2 hover:text-indigo-500">Skills</a>
+      <a href="#projects" class="block py-2 hover:text-indigo-500">Projects</a>
+      <a href="#timeline" class="block py-2 hover:text-indigo-500">Journey</a>
+      <a href="#contact" class="block py-2 hover:text-indigo-500">Contact</a>
+      <button onclick="toggleDark()" class="text-yellow-400 py-2">🌙 Dark Mode</button>
     </div>
+  </header>
+
   </header>
 
   <!-- 🏠 Hero Section -->
@@ -433,13 +424,14 @@
   <!-- 🌙 Dark Mode Toggle Script -->
 
   <script>
-    function toggleDark() {
-      document.documentElement.classList.toggle('dark');
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("scale-y-0");
+      menu.classList.toggle("scale-y-100");
     }
 
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
     }
 
 
