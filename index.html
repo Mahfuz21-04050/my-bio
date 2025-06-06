@@ -24,6 +24,10 @@
       scroll-behavior: smooth;
     }
 
+    .font-\[Pacifico\] {
+      font-family: 'Pacifico', cursive;
+    }
+
     .glass {
       backdrop-filter: blur(10px);
       background: rgba(255, 255, 255, 0.1);
@@ -37,7 +41,12 @@
   <!-- 🌐 Navbar -->
   <header class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold font-[Pacifico]">Mahfuz</h1>
+
+      <!-- <h1 class="text-2xl font-bold font-[Pacifico]">Mahfuz</h1> -->
+      <a href="#" class="flex items-center space-x-2">
+        <img src="logo.png" alt="Mahfuz Logo" class="h-10 w-auto object-contain">
+      </a>
+
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 font-medium">
@@ -46,15 +55,15 @@
         <a href="#projects" class="hover:text-indigo-500">Projects</a>
         <a href="#timeline" class="hover:text-indigo-500">Journey</a>
         <a href="#contact" class="hover:text-indigo-500">Contact</a>
-        <button onclick="toggleDark()" class="ml-4 text-yellow-400">🌙</button>
+        <button onclick="toggleDark()" class="ml-4 text-yellow-400">🌓</button>
       </nav>
 
       <!-- Mobile Menu Button -->
       <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
     </div>
 
-    <!-- Mobile Nav Dropdown -->
-    <div id="mobileMenu"
+
+    <!-- <div id="mobileMenu"
       class="md:hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top flex flex-col items-start px-6 py-4 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
       <a href="#about" class="block py-2 hover:text-indigo-500">About</a>
       <a href="#skills" class="block py-2 hover:text-indigo-500">Skills</a>
@@ -62,7 +71,7 @@
       <a href="#timeline" class="block py-2 hover:text-indigo-500">Journey</a>
       <a href="#contact" class="block py-2 hover:text-indigo-500">Contact</a>
       <button onclick="toggleDark()" class="text-yellow-400 py-2">🌙 Dark Mode</button>
-    </div>
+    </div> -->
   </header>
 
 
@@ -249,15 +258,15 @@
       <div id="web-projects" class="grid md:grid-cols-2 gap-8">
         <!-- Add your web projects here -->
         <!-- Example -->
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
-            <a href="https://github.com/Mahfuz21-04050/Laundry" target="_blank" class="hover:underline">Smart
+            <a href="https://mahfuz21-04050.github.io/Laundry/" target="_blank" class="hover:underline">Smart
               Laundry</a>
           </h3>
           <p>Web development project for laundry service management.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://github.com/blackcodd/APMMS" target="_blank" class="hover:underline">APMMS</a>
           </h3>
@@ -265,7 +274,7 @@
         </div>
 
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href=" https://mahfuz21-04050.github.io/Tailwind-css/" target="_blank" class="hover:underline">
               Tailwind-css
@@ -276,7 +285,7 @@
 
 
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://mahfuz21-04050.github.io/Educational-form/" target="_blank" class="hover:underline">
               Educational-form
@@ -285,7 +294,7 @@
           <p>Form project for educational purposes.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://mahfuz21-04050.github.io/Newspaper/" target="_blank" class="hover:underline">
               Newspaper
@@ -294,7 +303,7 @@
           <p>Online newspaper layout project.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="gilded-choux-fb3f6c.netlify.app" target="_blank" class="hover:underline">
               Temperature-Converter
@@ -303,7 +312,7 @@
           <p>Simple temperature conversion app.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href=" https://mahfuz21-04050.github.io/doctor-site/" target="_blank" class="hover:underline">
               Doctor Bio
@@ -385,11 +394,11 @@
 
       <div class="flex justify-center flex-wrap gap-4 mb-10">
         <a href="mailto:maahfuz2021@gmail.com"
-          class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full transition-all duration-300">
+          class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 px-6 py-3 rounded-full transition-all duration-300 ">
           📧 Email
         </a>
         <a href="https://www.facebook.com" target="_blank"
-          class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-all duration-300">
+          class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-all duration-300 ">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook"
             class="w-5 h-5" /> Facebook
         </a>

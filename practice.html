@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Md Mahfuzur Rahman's Portfolio Website">
+  <title>Md Mahfuzur Rahman - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .font-\[Pacifico\] {
+      font-family: 'Pacifico', cursive;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+  <!-- Navbar -->
+  <nav
+    class="fixed top-0 left-0 w-full z-50 backdrop-blur-md glass px-4 md:px-10 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold font-[Pacifico]">Mahfuz</h1>
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+    <ul class="hidden md:flex space-x-6 font-medium">
+      <li><a href="#about" class="hover:text-blue-500">About</a></li>
+      <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+      <li><button onclick="toggleDark()" class="hover:text-yellow-400">🌓</button></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <!-- <div id="mobileMenu"
+    class="md:hidden max-h-0 overflow-hidden transition-all duration-300 bg-white dark:bg-gray-800 backdrop-blur-md glass fixed w-full top-[64px] left-0 z-40">
+    <ul class="flex flex-col items-center py-4 space-y-4">
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <li><button onclick="toggleDark(); toggleMenu()">🌓</button></li>
+    </ul>
+  </div> -->
+
+  <!-- Hero Section -->
+  <section
+    class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-200 to-purple-300 dark:from-gray-800 dark:to-gray-900">
+    <h1 class="text-4xl md:text-6xl font-bold" data-aos="fade-up">Hi, I'm Md Mahfuzur Rahman</h1>
+    <p class="text-xl mt-4" data-aos="fade-up" data-aos-delay="200">A Passionate Web Developer and Cybersecurity Learner
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 md:px-20 bg-white dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center" data-aos="fade-right">About Me</h2>
+      <p class="text-lg leading-7" data-aos="fade-left">
+        I'm a 3rd year CSE student at CUET. I have a strong passion for both Web Development and Cybersecurity. I love
+        building responsive web apps and exploring the latest security vulnerabilities and techniques.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 px-4 md:px-20 bg-gray-100 dark:bg-gray-800">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">My Projects</h2>
+      <div class="flex justify-center space-x-4 mb-6">
+        <button onclick="showProjects('web')" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Web
+          Development</button>
+        <button onclick="showProjects('cyber')"
+          class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Cybersecurity</button>
+      </div>
+    </div>
+
+    <!-- Web Projects -->
+    <div id="web-projects" class="grid md:grid-cols-2 gap-6">
+      <div class="glass p-6 rounded-xl shadow-md text-white bg-blue-600" data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-2">Dr. Nafis Rahman Website</h3>
+        <p>A responsive website with Firebase-based appointment booking system.</p>
+        <a href="https://gilded-choux-fb3f6c.netlify.app" target="_blank" class="underline text-sm">Visit Site</a>
+      </div>
+      <div class="glass p-6 rounded-xl shadow-md text-white bg-blue-600" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+        <p>This personal portfolio site built using Tailwind, HTML, JS.</p>
+      </div>
+    </div>
+
+    <!-- Cybersecurity Projects -->
+    <div id="cyber-projects" class="grid md:grid-cols-2 gap-6 hidden">
+      <div class="glass p-6 rounded-xl shadow-md text-white bg-green-600" data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-2">Web Application Pentesting Lab</h3>
+        <p>Testing and exploiting various vulnerabilities (XSS, SQLi, etc).</p>
+      </div>
+      <div class="glass p-6 rounded-xl shadow-md text-white bg-green-600" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-xl font-bold mb-2">Linux Privilege Escalation Practice</h3>
+        <p>Worked on multiple Vulnhub machines to gain root access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4 md:px-20 bg-white dark:bg-gray-900">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6" data-aos="fade-right">Contact Me</h2>
+      <p class="mb-4" data-aos="fade-left">Feel free to reach out via email or LinkedIn!</p>
+      <a href="mailto:mahfuz@example.com" class="text-blue-500 underline" data-aos="fade-up">mahfuz@example.com</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 text-center bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+    <p>© 2025 Md Mahfuzur Rahman. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('max-h-0');
+      menu.classList.toggle('max-h-screen');
+    }
+
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    function showProjects(category) {
+      const web = document.getElementById('web-projects');
+      const cyber = document.getElementById('cyber-projects');
+      if (category === 'web') {
+        web.classList.remove('hidden');
+        cyber.classList.add('hidden');
+      } else {
+        cyber.classList.remove('hidden');
+        web.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+
+</html>
