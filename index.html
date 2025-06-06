@@ -11,6 +11,13 @@
     tailwind.config = {
       darkMode: 'class',
     };
+    module.exports = {
+      content: ["./*.html"],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
   </script>
   <style>
     html {
@@ -48,7 +55,7 @@
 
     <!-- Mobile Nav Dropdown -->
     <div id="mobileMenu"
-      class="absolute top-full left-0 w-full transition-all duration-300 ease-in-out transform scale-y-0 origin-top md:hidden flex flex-col items-start px-6 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
+      class="md:hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top flex flex-col items-start px-6 py-4 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
       <a href="#about" class="block py-2 hover:text-indigo-500">About</a>
       <a href="#skills" class="block py-2 hover:text-indigo-500">Skills</a>
       <a href="#projects" class="block py-2 hover:text-indigo-500">Projects</a>
@@ -58,14 +65,17 @@
     </div>
   </header>
 
-  </header>
 
   <!-- 🏠 Hero Section -->
   <section
     class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white px-6 pt-20">
     <div data-aos="fade-up">
-      <h1 class="text-5xl font-bold mb-4">Md Mahfuzur Rahman</h1>
-      <p class="text-xl text-gray-300">Web Developer & Cybersecurity Enthusiast</p>
+
+
+      <h2 class="text-4xl font-bold">Md Mahfuzur Rahman</h2>
+      <p class="mt-4 text-gray-600 dark:text-gray-300">Web Developer | Cybersecurity Enthusiast</p>
+
+
       <p class="mt-4 max-w-xl mx-auto text-gray-400">
         CSE 3rd Year @ CUET. Passionate about secure full-stack web development and ethical hacking.
       </p>
