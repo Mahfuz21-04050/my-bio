@@ -31,6 +31,8 @@
   <header class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold font-[Pacifico]">Mahfuz</h1>
+
+      <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-6 font-medium">
         <a href="#about" class="hover:text-indigo-500">About</a>
         <a href="#skills" class="hover:text-indigo-500">Skills</a>
@@ -39,6 +41,19 @@
         <a href="#contact" class="hover:text-indigo-500">Contact</a>
         <button onclick="toggleDark()" class="ml-4 text-yellow-400">🌙</button>
       </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobileMenu" class="md:hidden hidden flex-col items-start px-6 pb-4 space-y-2 bg-white dark:bg-gray-900">
+      <a href="#about" class="block hover:text-indigo-500">About</a>
+      <a href="#skills" class="block hover:text-indigo-500">Skills</a>
+      <a href="#projects" class="block hover:text-indigo-500">Projects</a>
+      <a href="#timeline" class="block hover:text-indigo-500">Journey</a>
+      <a href="#contact" class="block hover:text-indigo-500">Contact</a>
+      <button onclick="toggleDark()" class="text-yellow-400">🌙 Dark Mode</button>
     </div>
   </header>
 
@@ -404,10 +419,18 @@
   </footer>
 
   <!-- 🌙 Dark Mode Toggle Script -->
+
   <script>
     function toggleDark() {
       document.documentElement.classList.toggle('dark');
     }
+
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+
 
 
 
