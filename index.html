@@ -27,6 +27,22 @@
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
+
+    @keyframes wiggle {
+
+      0%,
+      100% {
+        transform: rotate(-1deg);
+      }
+
+      50% {
+        transform: rotate(1deg);
+      }
+    }
+
+    .animate-wiggle {
+      animation: wiggle 0.3s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -46,7 +62,7 @@
         <button onclick="toggleDark()"
           class="relative w-12 h-6 bg-gray-500 rounded-full transition-all duration-300 flex items-center justify-start dark:justify-end">
           <span
-            class="absolute left-1 top-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center text-xs">
+            class="toggle-thumb absolute left-1 top-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center text-xs">
             🌙
           </span>
         </button>
@@ -81,8 +97,7 @@
     </div>
   </header>
 
-  <section
-    class="min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white flex items-center justify-center px-6 pt-20">
+  <section class="min-h-screenbg-gray-100 dark:bg-gray-900 dark:text-white flex items-center justify-center px-6 pt-20">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
       <!-- Profile Image -->
@@ -93,8 +108,10 @@
 
       <!-- Text Content -->
       <div class="text-center md:text-left">
-        <h2 class="text-4xl font-bold text-gray-900">Hi! I'm Md Mahfuzur Rahman</h2>
-        <p class="text-2xl text-teal-600 mt-2">A Passionate Web Developer and Cybersecurity Learner</p>
+        <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-100">Hi! I'm Md Mahfuzur Rahman</h2>
+        <p class="text-2xl text-teal-600 mt-2  animate-wiggle" data-aos="fade-left" data-aos-duration="1500">A
+          Passionate Web Developer
+          and Cybersecurity Learner</p>
         <p class="mt-4 text-gray-700 max-w-xl">
           CSE 3rd Year @ CUET. Passionate about secure full-stack web development and ethical hacking.
         </p>
@@ -106,7 +123,7 @@
           <a href="#projects" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-full">See Projects</a>
           <a href="#contact"
             class="border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-2 rounded-full">Contact</a>
-          <a href="/resume.pdf" download
+          <a href="PIC/cv (1).pdf" download
             class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-full">Download
             CV</a>
         </div>
@@ -117,13 +134,13 @@
 
 
   <!-- About Me Section -->
-  <section id="about" class="py-16 bg-gray-900 text-white px-6">
+  <section id="about" class="py-16  bg-gray-100 dark:bg-gray-800  px-6">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start border-t border-gray-700 pt-10">
 
       <!-- Left Side: Description -->
       <div>
-        <h2 class="text-3xl font-bold text-green-400 mb-4">About Me</h2>
-        <p class="text-lg leading-relaxed text-gray-300">
+        <h2 class="text-3xl font-bold text-gray-1000 dark:text-green-400 mb-4">About Me</h2>
+        <p class="text-lg leading-relaxed text-gray-900 dark:text-gray-300">
           <strong>Hello! I’m Mahfuz.</strong><br>
           A passionate and curious learner from CUET with a strong academic background in <strong>Math, Physics,
             Chemistry,</strong> and <strong>Biology</strong>. I’ve always been fascinated by how the world works — from
@@ -143,16 +160,20 @@
       <!-- Right Side: Basic Info -->
       <div class="space-y-4">
         <div class="flex justify-between border-b border-gray-600 pb-2">
-          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Age:</span>
-          <span class="text-gray-300" id="age">Calculating...</span>
+          <span class="bg-gray-1000 dark:bg-green-500 text-gray-900 font-semibold px-2 rounded">Age:</span>
+          <span class="text-gray-900 dark:text-gray-300" id="age">Calculating...</span>
         </div>
         <div class="flex justify-between border-b border-gray-600 pb-2">
-          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Nationality:</span>
-          <span class="text-gray-300">Bangladeshi</span>
+          <span class="bg-gray-1000 dark:bg-green-500 text-gray-900 font-semibold px-2 rounded">Nationality:</span>
+          <span class="text-gray-900 dark:text-gray-300">Bangladeshi</span>
         </div>
         <div class="flex justify-between border-b border-gray-600 pb-2">
-          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Location:</span>
-          <span class="text-gray-300">Chittagong, Bangladesh</span>
+          <!-- <span class="bg-gray-1000 dark:bg-green-500 text-gray-900 font-semibold px-2 rounded">Location:</span>
+          <span class="text-gray-900 dark:text-gray-300">Chittagong, Bangladesh</span> -->
+          <span id="userLocation" class="bg-gray-1000 dark:bg-green-500 text-gray-900 font-semibold px-2 rounded">
+            Location: Detecting... </span>
+          <!-- <span id="geoLocation" class="bg-gray-1000 dark:bg-green-500 text-gray-900 font-semibold px-2 rounded">
+            Location: Detecting... </span> -->
         </div>
       </div>
 
@@ -452,23 +473,39 @@
       }
     });
 
-    function toggleDark() {
-      const htmlElement = document.documentElement;
-      htmlElement.classList.toggle('dark');
 
-      if (htmlElement.classList.contains('dark')) {
+    function toggleDark() {
+      const html = document.documentElement;
+      const thumb = document.querySelector('.toggle-thumb');
+      const toggleBtn = document.getElementById('darkToggle');
+
+      html.classList.toggle('dark');
+
+      // Store preference
+      if (html.classList.contains('dark')) {
         localStorage.setItem('theme', 'dark');
+        thumb.classList.add('translate-x-6'); // Move to right
       } else {
         localStorage.setItem('theme', 'light');
+        thumb.classList.remove('translate-x-6'); // Move to left
       }
     }
 
+    // On page load - set theme and thumb position
     window.addEventListener('DOMContentLoaded', () => {
       const savedTheme = localStorage.getItem('theme');
+      const thumb = document.querySelector('.toggle-thumb');
+
       if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
+        thumb.classList.add('translate-x-6');
+      } else {
+        document.documentElement.classList.remove('dark');
+        thumb.classList.remove('translate-x-6');
       }
     });
+
+
 
     function switchProjects() {
       const webProjects = document.getElementById("web-projects");
@@ -505,6 +542,34 @@
     }
 
     document.getElementById("age").textContent = age;
+
+
+    //location
+
+    fetch("https://ipinfo.io/json?token=491cc5e6c898aa")
+      .then(response => response.json())
+      .then(data => {
+        const location = `${data.city}, ${data.region}, ${data.country}`;
+        document.getElementById('userLocation').textContent = `Location: ${location}`;
+      })
+      .catch(() => {
+        document.getElementById('userLocation').textContent = "Location: Unknown";
+      });
+
+    /*  if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude.toFixed(3);
+            const lon = position.coords.longitude.toFixed(3);
+            document.getElementById('geoLocation').textContent = `Location: ${lat}, ${lon}`;
+          },
+          () => {
+            document.getElementById('geoLocation').textContent = "Location: Permission Denied";
+          }
+        );
+      } else {
+        document.getElementById('geoLocation').textContent = "Location: Not supported";
+      }*/
   </script>
 
 
