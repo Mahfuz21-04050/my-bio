@@ -11,13 +11,7 @@
     tailwind.config = {
       darkMode: 'class',
     };
-    module.exports = {
-      content: ["./*.html"],
-      theme: {
-        extend: {},
-      },
-      plugins: [],
-    }
+
   </script>
   <style>
     html {
@@ -38,66 +32,88 @@
 
 <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans">
 
-  <!-- 🌐 Navbar -->
-  <header class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md">
+  <header class="fixed top-0 w-full z-50 bg-gray-200 dark:bg-gray-900 shadow-md transition duration-300">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-
-      <!-- <h1 class="text-2xl font-bold font-[Pacifico]">Mahfuz</h1> -->
+      <!-- Logo -->
       <a href="#" class="flex items-center space-x-2">
-        <img src="logo.png" alt="Mahfuz Logo" class="h-10 w-auto object-contain">
+        <img src="PIC/image.png" alt="Logo" class="h-11 w-auto object-contain" />
+        <span class="text-xl font-bold text-black dark:text-white">Mahfuz</span>
       </a>
 
-
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6 font-medium">
-        <a href="#about" class="hover:text-indigo-500">About</a>
-        <a href="#skills" class="hover:text-indigo-500">Skills</a>
-        <a href="#projects" class="hover:text-indigo-500">Projects</a>
-        <a href="#timeline" class="hover:text-indigo-500">Journey</a>
-        <a href="#contact" class="hover:text-indigo-500">Contact</a>
-        <button onclick="toggleDark()" class="ml-4 text-yellow-400">🌓</button>
+      <nav class="hidden md:flex items-center space-x-6 font-medium text-black dark:text-white">
+        <!-- Dark Mode Toggle Switch -->
+        <button onclick="toggleDark()"
+          class="relative w-12 h-6 bg-gray-500 rounded-full transition-all duration-300 flex items-center justify-start dark:justify-end">
+          <span
+            class="absolute left-1 top-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center text-xs">
+            🌙
+          </span>
+        </button>
+
+        <!-- Menu Items -->
+        <a href="#about" class="hover:text-indigo-500 transition">About</a>
+        <a href="#skills" class="hover:text-indigo-500 transition">Skills</a>
+        <a href="#projects" class="hover:text-indigo-500 transition">Projects</a>
+        <a href="#timeline" class="hover:text-indigo-500 transition">Journey</a>
+        <a href="#contact" class="hover:text-indigo-500 transition">Contact</a>
       </nav>
 
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+      <!-- Mobile Menu Toggle -->
+      <button id="menuBtn" class="md:hidden text-3xl focus:outline-none transition text-black dark:text-white"
+        onclick="toggleMenu()">☰</button>
     </div>
 
-
-    <!-- <div id="mobileMenu"
-      class="md:hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top flex flex-col items-start px-6 py-4 space-y-2 bg-white dark:bg-gray-900 shadow-md z-40">
-      <a href="#about" class="block py-2 hover:text-indigo-500">About</a>
-      <a href="#skills" class="block py-2 hover:text-indigo-500">Skills</a>
-      <a href="#projects" class="block py-2 hover:text-indigo-500">Projects</a>
-      <a href="#timeline" class="block py-2 hover:text-indigo-500">Journey</a>
-      <a href="#contact" class="block py-2 hover:text-indigo-500">Contact</a>
-      <button onclick="toggleDark()" class="text-yellow-400 py-2">🌙 Dark Mode</button>
-    </div> -->
+    <!-- Mobile Nav -->
+    <div id="mobileMenu"
+      class="hidden md:hidden flex-col px-6 pb-6 space-y-4 font-medium bg-gray-200 dark:bg-gray-900 transition-all duration-300 ease-in-out shadow-md text-black dark:text-white">
+      <a href="#about" class="block hover:text-indigo-500 transition">About</a>
+      <a href="#skills" class="block hover:text-indigo-500 transition">Skills</a>
+      <a href="#projects" class="block hover:text-indigo-500 transition">Projects</a>
+      <a href="#timeline" class="block hover:text-indigo-500 transition">Journey</a>
+      <a href="#contact" class="block hover:text-indigo-500 transition">Contact</a>
+      <button onclick="toggleDark()"
+        class="relative w-12 h-6 bg-gray-500 rounded-full transition-all duration-300 flex items-center justify-start dark:justify-end">
+        <span class="absolute left-1 top-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center text-xs">
+          🌙
+        </span>
+      </button>
+    </div>
   </header>
 
-
-  <!-- 🏠 Hero Section -->
   <section
-    class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white px-6 pt-20">
-    <div data-aos="fade-up">
+    class="min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white flex items-center justify-center px-6 pt-20">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
+      <!-- Profile Image -->
+      <div class="flex justify-center md:justify-end">
+        <img src="PIC/mahfuz.jpg" alt="Md Mahfuzur Rahman"
+          class="w-60 h-60 rounded-full shadow-lg border-4 border-teal-500 object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
 
-      <h2 class="text-4xl font-bold">Hi, I'm Md Mahfuzur Rahman</h2>
-      <p class="text-xl mt-4" data-aos="fade-up" data-aos-delay="200">A Passionate Web Developer and Cybersecurity
-        Learner
-      </p>
+      <!-- Text Content -->
+      <div class="text-center md:text-left">
+        <h2 class="text-4xl font-bold text-gray-900">Hi! I'm Md Mahfuzur Rahman</h2>
+        <p class="text-2xl text-teal-600 mt-2">A Passionate Web Developer and Cybersecurity Learner</p>
+        <p class="mt-4 text-gray-700 max-w-xl">
+          CSE 3rd Year @ CUET. Passionate about secure full-stack web development and ethical hacking.
+        </p>
 
+        <p class="mt-2 text-sm text-gray-500">Email: <a href="mailto:yourmail@example.com"
+            class="text-teal-700 hover:underline">yourmail@example.com</a></p>
 
-      <p class="mt-4 max-w-xl mx-auto text-gray-400">
-        CSE 3rd Year @ CUET. Passionate about secure full-stack web development and ethical hacking.
-      </p>
-      <div class="mt-6 space-x-4">
-        <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full">See Projects</a>
-        <a href="#contact"
-          class="border border-white px-6 py-2 rounded-full hover:bg-white hover:text-black">Contact</a>
-        <a href="/resume.pdf" download class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded-full">Download CV</a>
+        <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
+          <a href="#projects" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-full">See Projects</a>
+          <a href="#contact"
+            class="border border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-6 py-2 rounded-full">Contact</a>
+          <a href="/resume.pdf" download
+            class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2 rounded-full">Download
+            CV</a>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- 👨‍💻 About Section -->
   <section id="about" class="py-20 bg-white dark:bg-gray-800 px-6">
@@ -111,50 +127,94 @@
   </section>
 
   <!-- 🚀 Skills Section -->
-  <section id="skills" class="py-20 bg-gray-100 dark:bg-gray-900 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10">Skills</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-800 dark:text-white">
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
-          <img src="https://cdn.simpleicons.org/html5" class="w-6 h-6" /> <span>HTML & CSS</span>
+  <section id="skills" class="py-20 bg-gray-900 text-white px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+
+        <!-- Skill Card Template -->
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/html5" alt="HTML" class="w-12 h-12">
+          <p class="font-bold text-lg">HTML</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">93%</div>
         </div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
-          <img src="https://cdn.simpleicons.org/javascript" class="w-6 h-6" /> <span>JavaScript</span>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/css3" alt="CSS" class="w-12 h-12">
+          <p class="font-bold text-lg">CSS</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">90%</div>
         </div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
-          <img src="https://cdn.simpleicons.org/tailwindcss" class="w-6 h-6" /> <span>Tailwind CSS</span>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" class="w-12 h-12">
+          <p class="font-bold text-lg">JS</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">65%</div>
         </div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow flex items-center justify-center space-x-2">
-          <img src="https://cdn.simpleicons.org/firebase" class="w-6 h-6" /> <span>Firebase</span>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/react" alt="React" class="w-12 h-12">
+          <p class="font-bold text-lg">React</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">80%</div>
         </div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">React (Learning)</div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Ethical Hacking Basics</div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Linux & CLI</div>
-        <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">Bug Bounty (Beginner)</div>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" class="w-12 h-12">
+
+          <p class="font-bold text-lg">Node.js</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">50%</div>
+        </div>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="Express.js"
+            class="w-12 h-12">
+
+          <p class="font-bold text-lg">Express</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">50%</div>
+        </div>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" class="w-12 h-12">
+          <p class="font-bold text-lg">MongoDB</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">43%</div>
+        </div>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS" class="w-12 h-12">
+          <p class="font-bold text-lg">Tailwind CSS</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">95%</div>
+        </div>
+
+        <div class="bg-black rounded-xl p-6 flex flex-col items-center justify-center space-y-4 shadow-lg">
+          <img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap" class="w-12 h-12">
+          <p class="font-bold text-lg">Bootstrap</p>
+          <div class="w-full text-center bg-gray-800 text-sm rounded py-1 font-semibold">60%</div>
+        </div>
+
       </div>
     </div>
   </section>
 
 
 
+
   <!-- 💼 Projects Section -->
-  <section id="projects" class="py-20 bg-white  dark:bg-gray-800 px-6">
+  <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-800 px-6">
     <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-10">My Projects</h2>
+      <h2 class="text-3xl font-bold  mb-10">My Projects</h2>
 
       <!-- Category Tabs -->
       <div class="flex justify-center mb-8 space-x-4">
-        <button onclick="showProjects('web')"
+        <button onclick="switchProjects()"
           class="px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700">Web Development</button>
-        <button onclick="showProjects('cyber')"
+        <button onclick="switchProjects()"
           class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-gray-600">Cybersecurity</button>
       </div>
 
       <!-- Web Dev Projects -->
       <div id="web-projects" class="grid md:grid-cols-2 gap-8">
-        <!-- Add your web projects here -->
-        <!-- Example -->
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://mahfuz21-04050.github.io/Laundry/" target="_blank" class="hover:underline">Smart
               Laundry</a>
@@ -162,7 +222,7 @@
           <p>Web development project for laundry service management.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://github.com/blackcodd/APMMS" target="_blank" class="hover:underline">APMMS</a>
           </h3>
@@ -170,7 +230,7 @@
         </div>
 
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href=" https://mahfuz21-04050.github.io/Tailwind-css/" target="_blank" class="hover:underline">
               Tailwind-css
@@ -181,7 +241,7 @@
 
 
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://mahfuz21-04050.github.io/Educational-form/" target="_blank" class="hover:underline">
               Educational-form
@@ -190,7 +250,7 @@
           <p>Form project for educational purposes.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="https://mahfuz21-04050.github.io/Newspaper/" target="_blank" class="hover:underline">
               Newspaper
@@ -199,7 +259,7 @@
           <p>Online newspaper layout project.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href="gilded-choux-fb3f6c.netlify.app" target="_blank" class="hover:underline">
               Temperature-Converter
@@ -208,7 +268,7 @@
           <p>Simple temperature conversion app.</p>
         </div>
 
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-left">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-left">
           <h3 class="text-xl font-semibold mb-2">
             <a href=" https://mahfuz21-04050.github.io/doctor-site/" target="_blank" class="hover:underline">
               Doctor Bio
@@ -221,17 +281,20 @@
         <!-- More from your list -->
       </div>
 
+
+
+
       <!-- Cybersecurity Projects -->
       <div id="cyber-projects" class="grid md:grid-cols-2 gap-8 hidden">
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">Secure Login System</h3>
           <p>Firebase-based login system with 2FA and protected routes.</p>
         </div>
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">Bug Bounty Report Clone</h3>
           <p>Styled UI resembling bug bounty writeups with Tailwind.</p>
         </div>
-        <div class="glass p-6 rounded-xl shadow-md text-white" data-aos="fade-up">
+        <div class="glass p-6 rounded-xl shadow-md text-gray-900 dark:text-white" data-aos="fade-up">
           <h3 class="text-xl font-semibold mb-2">Port Scanner CLI Tool</h3>
           <p>A custom port scanner using Python socket module (CLI-based).</p>
         </div>
@@ -340,33 +403,63 @@
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      menu.classList.toggle("scale-y-0");
-      menu.classList.toggle("scale-y-100");
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
     }
+
+    // Optional: Load saved theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
 
     function toggleDark() {
-      document.documentElement.classList.toggle('dark');
-    }
+      const htmlElement = document.documentElement;
+      htmlElement.classList.toggle('dark');
 
-
-
-
-
-    function showProjects(type) {
-      const web = document.getElementById('web-projects');
-      const cyber = document.getElementById('cyber-projects');
-      if (type === 'web') {
-        web.classList.remove('hidden');
-        cyber.classList.add('hidden');
+      if (htmlElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
       } else {
-        web.classList.add('hidden');
-        cyber.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
       }
     }
 
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    });
 
+    function switchProjects() {
+      const webProjects = document.getElementById("web-projects");
+      const cyberProjects = document.getElementById("cyber-projects");
+      const buttons = event.target.parentElement.querySelectorAll("button");
+
+      // Toggle active button style
+      buttons.forEach(btn => {
+        btn.classList.remove("bg-indigo-600", "text-white");
+        btn.classList.add("bg-gray-200", "text-gray-800", "dark:bg-gray-700", "dark:text-white");
+      });
+
+      // Active button style
+      event.target.classList.remove("bg-gray-200", "text-gray-800", "dark:bg-gray-700", "dark:text-white");
+      event.target.classList.add("bg-indigo-600", "text-white");
+
+      if (event.target.textContent.includes("Web")) {
+        webProjects.classList.remove("hidden");
+        cyberProjects.classList.add("hidden");
+      } else {
+        webProjects.classList.add("hidden");
+        cyberProjects.classList.remove("hidden");
+      }
+    }
   </script>
+
 
 
   <!-- AOS Animation Init -->
