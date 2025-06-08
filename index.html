@@ -115,16 +115,50 @@
   </section>
 
 
-  <!-- 👨‍💻 About Section -->
-  <section id="about" class="py-20 bg-white dark:bg-gray-800 px-6">
-    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300">
-        I'm Mahfuz, a curious coder from CUET diving deep into web technologies and cybersecurity.
-        I enjoy solving problems, learning new tools, and building things that make a difference.
-      </p>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-16 bg-gray-900 text-white px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start border-t border-gray-700 pt-10">
+
+      <!-- Left Side: Description -->
+      <div>
+        <h2 class="text-3xl font-bold text-green-400 mb-4">About Me</h2>
+        <p class="text-lg leading-relaxed text-gray-300">
+          <strong>Hello! I’m Mahfuz.</strong><br>
+          A passionate and curious learner from CUET with a strong academic background in <strong>Math, Physics,
+            Chemistry,</strong> and <strong>Biology</strong>. I’ve always been fascinated by how the world works — from
+          the equations in physics to the patterns in biology.
+          <br><br>
+          Besides my academic interests, I’m deeply engaged in <strong>web development</strong> and
+          <strong>cybersecurity</strong>. I enjoy building responsive, modern web applications using tools like
+          <strong>HTML, CSS, JavaScript, Tailwind CSS, React, Node.js,</strong> and more. I love exploring new
+          technologies, learning by doing, and solving real-world problems through code.
+          <br><br>
+          My goal is to combine my scientific mindset with my technical skills to build innovative solutions that are
+          both
+          smart and impactful.
+        </p>
+      </div>
+
+      <!-- Right Side: Basic Info -->
+      <div class="space-y-4">
+        <div class="flex justify-between border-b border-gray-600 pb-2">
+          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Age:</span>
+          <span class="text-gray-300" id="age">Calculating...</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-600 pb-2">
+          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Nationality:</span>
+          <span class="text-gray-300">Bangladeshi</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-600 pb-2">
+          <span class="bg-green-500 text-gray-900 font-semibold px-2 rounded">Location:</span>
+          <span class="text-gray-300">Chittagong, Bangladesh</span>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <!-- 🚀 Skills Section -->
   <section id="skills" class="py-20 bg-gray-900 text-white px-6">
@@ -459,6 +493,18 @@
         cyberProjects.classList.remove("hidden");
       }
     }
+
+
+    const birthDate = new Date("2001-07-15");
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    document.getElementById("age").textContent = age;
   </script>
 
 
